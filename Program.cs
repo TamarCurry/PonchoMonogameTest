@@ -15,7 +15,7 @@ namespace PonchoMonogameTest
 		[STAThread]
 		static void Main()
 		{
-			App.Init(new MonogameApp(null));
+			App.Init(new MonogameApp( () => new MonogameTest() ));
 		}
 	}
 }

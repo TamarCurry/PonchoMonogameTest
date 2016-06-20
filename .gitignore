@@ -1,1 +1,7 @@
 *.exe
+obj/x86/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+obj/x86/Debug/PonchoMonogameTest.csproj.FileListAbsolute.txt
+*.cache
+.vs/PonchoMonogameTest/v14/.suo
+bin/DesktopGL/x86/Debug/Content/Agrias.xnb
+bin/DesktopGL/x86/Debug/Content/Ramza2.xnb
