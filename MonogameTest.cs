@@ -8,6 +8,7 @@ using Poncho.Geom;
 using Poncho.Framework;
 using Poncho.Display;
 using Poncho.Events;
+using Poncho.Text;
 
 namespace PonchoMonogameTest
 {
@@ -21,37 +22,45 @@ namespace PonchoMonogameTest
 			_agrias = new Sprite();
 			_ramza = new Sprite();
 
-			_agrias.image = App.GetImage("Agrias", new Pivot(0.5f, 0.5f));
+			_agrias.image = App.GetImage("Agrias");
 			_ramza.image = App.GetImage("Ramza");
 
 			_agrias.name = "Agrias";
 			//_ramza.rotation = 45;
 			//_agrias.rotation = 90;
 
-			_agrias.x = 400;
-			_agrias.y = 400;
+			_agrias.x = 100;
+			_agrias.y = 100;
 			
-			_agrias.rotation = 30;
-			_agrias.scaleX = -0.5f;
-			_agrias.scaleY = -0.5f;
+			//_agrias.rotation = 30;
+			//_agrias.scaleX = -0.5f;
+			//_agrias.scaleY = -0.5f;
+
+			TextField t = new TextField();
+			t.format = App.GetTextFormat("Tuesday", "Tuesday", 12);
+			t.text = "Tuesday";
+			t.pivotX = 0.5f;
+			t.pivotY = 0.5f;
+			_agrias.AddChild(t);
+
 
 			//App.Subscribe( () => _agrias.rotation += App.deltaTime * 180, true);
 
-			/*
+			
 			App.stage.AddChild(_agrias);
-			_agrias.AddEventListener(MouseEvent.CLICK, OnMouseEvent);
+			/*_agrias.AddEventListener(MouseEvent.CLICK, OnMouseEvent);
 			_agrias.AddEventListener(MouseEvent.MOUSE_OVER, OnMouseEvent);
 			_agrias.AddEventListener(MouseEvent.MOUSE_OUT, OnMouseEvent);
 			_agrias.AddEventListener(MouseEvent.MOUSE_WHEEL, OnMouseEvent);
 			//_agrias.AddChild(_ramza);*/
 
 			// stress test - render a huge number of sprites to the screen and rotate them every frame.
-			Random rand = new Random();
+			/*Random rand = new Random();
 			int num = 100;
 			for ( int i = 0; i < num; ++i )
 			{
 				AddSprite(rand);
-			}
+			}*/
 		}
 		
 		private void AddSprite(Random rand)

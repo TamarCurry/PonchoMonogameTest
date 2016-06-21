@@ -61,3 +61,9 @@
 /processorParam:TextureFormat=Color
 /build:Ramza2.png
 
+#begin Tuesday.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:Tuesday.spritefont
+
