@@ -1,8 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Poncho;
 using Poncho.Geom;
 using Poncho.Framework;
@@ -22,8 +18,8 @@ namespace PonchoMonogameTest
 			_agrias = new Sprite();
 			_ramza = new Sprite();
 
-			_agrias.image = App.GetImage("Agrias");
-			_ramza.image = App.GetImage("Ramza");
+			_agrias.image = App.images.GetImage("Agrias");
+			_ramza.image = App.images.GetImage("Ramza");
 
 			_agrias.name = "Agrias";
 			//_ramza.rotation = 45;
@@ -48,11 +44,12 @@ namespace PonchoMonogameTest
 
 			
 			App.stage.AddChild(_agrias);
-			/*_agrias.AddEventListener(MouseEvent.CLICK, OnMouseEvent);
+			//App.audio.LoadAndPlayMusic("Destinies", "Destinies");
+			_agrias.AddEventListener(MouseEvent.CLICK, OnMouseEvent);
 			_agrias.AddEventListener(MouseEvent.MOUSE_OVER, OnMouseEvent);
 			_agrias.AddEventListener(MouseEvent.MOUSE_OUT, OnMouseEvent);
 			_agrias.AddEventListener(MouseEvent.MOUSE_WHEEL, OnMouseEvent);
-			//_agrias.AddChild(_ramza);*/
+			//_agrias.AddChild(_ramza);
 
 			// stress test - render a huge number of sprites to the screen and rotate them every frame.
 			/*Random rand = new Random();
@@ -66,7 +63,7 @@ namespace PonchoMonogameTest
 		private void AddSprite(Random rand)
 		{
 			Sprite s = new Sprite();
-			s.image = App.GetImage("Agrias", new Pivot(0.5f, 0.5f));
+			s.image = App.images.GetImage("Agrias", new Pivot(0.5f, 0.5f));
 			float scale = 0.5f + ( rand.Next(0, 6) * 0.1f );
 			s.scaleX = s.scaleY = scale;
 			s.x = rand.Next(10, 1070);

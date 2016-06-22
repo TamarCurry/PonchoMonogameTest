@@ -45,8 +45,11 @@
     <Compile Include="PonchoMonogame\MonogameApp.cs" />
     <Compile Include="PonchoMonogame\MonogameAudio.cs" />
     <Compile Include="PonchoMonogame\MonogameFuncs.cs" />
-    <Compile Include="PonchoMonogame\MonogameTextures.cs" />
+    <Compile Include="PonchoMonogame\MonogameImages.cs" />
+    <Compile Include="PonchoMonogame\MonogameFonts.cs" />
+    <Compile Include="PonchoMonogame\MonogameView.cs" />
     <Compile Include="Poncho\App.cs" />
+    <Compile Include="Poncho\Audio\AudioParams.cs" />
     <Compile Include="Poncho\Display\DisplayObject.cs" />
     <Compile Include="Poncho\Display\Image.cs" />
     <Compile Include="Poncho\Display\Sprite.cs" />
@@ -61,6 +64,8 @@
     <Compile Include="Poncho\Geom\ImageRect.cs" />
     <Compile Include="Poncho\Geom\Pivot.cs" />
     <Compile Include="Poncho\Geom\Transforms.cs" />
+    <Compile Include="Poncho\Interfaces\IAppAudio.cs" />
+    <Compile Include="Poncho\Interfaces\IAppImages.cs" />
     <Compile Include="Poncho\Interfaces\IGameApp.cs" />
     <Compile Include="Poncho\Text\TextAlignment.cs" />
     <Compile Include="Poncho\Text\TextField.cs" />
@@ -91,9 +96,7 @@
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Poncho\Audio\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
