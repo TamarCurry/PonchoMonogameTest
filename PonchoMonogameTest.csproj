@@ -7,7 +7,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{F4BE0BEF-9C64-444A-AECA-5D0906832A96}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PonchoMonogameTest</RootNamespace>
     <AssemblyName>PonchoMonogameTest</AssemblyName>
@@ -37,19 +37,34 @@
   <PropertyGroup>
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
+    <Compile Include="MonogameTest.cs" />
     <Compile Include="PonchoMonogame\MonogameApp.cs" />
-    <Compile Include="PonchoMonogame\MonogameImage.cs" />
+    <Compile Include="PonchoMonogame\MonogameAudio.cs" />
+    <Compile Include="PonchoMonogame\MonogameFuncs.cs" />
+    <Compile Include="PonchoMonogame\MonogameTextures.cs" />
     <Compile Include="Poncho\App.cs" />
     <Compile Include="Poncho\Display\DisplayObject.cs" />
+    <Compile Include="Poncho\Display\Image.cs" />
     <Compile Include="Poncho\Display\Sprite.cs" />
     <Compile Include="Poncho\Display\Stage.cs" />
+    <Compile Include="Poncho\Events\Event.cs" />
+    <Compile Include="Poncho\Events\EventDispatcher.cs" />
+    <Compile Include="Poncho\Events\EventManager.cs" />
+    <Compile Include="Poncho\Events\EventPhase.cs" />
+    <Compile Include="Poncho\Events\MouseEvent.cs" />
+    <Compile Include="Poncho\Events\Propagation.cs" />
     <Compile Include="Poncho\Framework\Delegates.cs" />
     <Compile Include="Poncho\Geom\ImageRect.cs" />
     <Compile Include="Poncho\Geom\Pivot.cs" />
     <Compile Include="Poncho\Geom\Transforms.cs" />
     <Compile Include="Poncho\Interfaces\IGameApp.cs" />
-    <Compile Include="Poncho\Interfaces\ITextureImage.cs" />
+    <Compile Include="Poncho\Text\TextAlignment.cs" />
+    <Compile Include="Poncho\Text\TextField.cs" />
+    <Compile Include="Poncho\Text\TextFormat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -67,6 +82,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Poncho\TODO.txt" />
     <EmbeddedResource Include="Icon.ico" />
     <Content Include="OpenTK.dll.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
