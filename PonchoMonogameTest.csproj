@@ -49,7 +49,7 @@
     <Compile Include="PonchoMonogame\MonogameFonts.cs" />
     <Compile Include="PonchoMonogame\MonogameView.cs" />
     <Compile Include="Poncho\App.cs" />
-    <Compile Include="Poncho\Audio\AudioParams.cs" />
+    <Compile Include="Poncho\Audio\AudioSettings.cs" />
     <Compile Include="Poncho\Display\DisplayObject.cs" />
     <Compile Include="Poncho\Display\Image.cs" />
     <Compile Include="Poncho\Display\Sprite.cs" />
