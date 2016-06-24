@@ -23,10 +23,13 @@ namespace PonchoMonogameTest
 
 			_agrias.name = "Agrias";
 			//_ramza.rotation = 45;
-			//_agrias.rotation = 90;
+			//_agrias.rotation = 45;
 
-			_agrias.x = 100;
-			_agrias.y = 100;
+			_agrias.x = 70;
+			_agrias.y = 70;
+
+			_ramza.x = 20;
+			_ramza.y = 10;
 			
 			//_agrias.rotation = 30;
 			//_agrias.scaleX = -0.5f;
@@ -34,10 +37,15 @@ namespace PonchoMonogameTest
 
 			TextField t = new TextField();
 			t.format = App.GetTextFormat("Tuesday", "Tuesday", 12);
+			t.rotation = 45;
 			t.text = "Tuesday";
-			t.pivotX = 0.5f;
-			t.pivotY = 0.5f;
+			t.clipOverflow = true;
+			t.width = 50;
+			t.height = 50;
+			//t.pivotX = 0.5f;
+			//t.pivotY = 0.5f;
 			_agrias.AddChild(t);
+			_agrias.AddChild(_ramza);
 
 
 			//App.Subscribe( () => _agrias.rotation += App.deltaTime * 180, true);
@@ -45,25 +53,26 @@ namespace PonchoMonogameTest
 			
 			App.stage.AddChild(_agrias);
 			//App.audio.LoadAndPlayMusic("Destinies", "Destinies");
-			_agrias.AddEventListener(MouseEvent.CLICK, OnMouseEvent);
-			_agrias.AddEventListener(MouseEvent.MOUSE_OVER, OnMouseEvent);
-			_agrias.AddEventListener(MouseEvent.MOUSE_OUT, OnMouseEvent);
-			_agrias.AddEventListener(MouseEvent.MOUSE_WHEEL, OnMouseEvent);
+			//App.stage.AddEventListener(MouseEvent.CLICK, OnMouseEvent);
+			//App.stage.AddEventListener(MouseEvent.MOUSE_OVER, OnMouseEvent);
+			//App.stage.AddEventListener(MouseEvent.MOUSE_OUT, OnMouseEvent);
+			//App.stage.AddEventListener(MouseEvent.MOUSE_WHEEL, OnMouseEvent);
+			//_agrias.mouseChildren = false;
 			//_agrias.AddChild(_ramza);
 
 			// stress test - render a huge number of sprites to the screen and rotate them every frame.
-			/*Random rand = new Random();
+			Random rand = new Random();
 			int num = 100;
 			for ( int i = 0; i < num; ++i )
 			{
-				AddSprite(rand);
-			}*/
+				//AddSprite(rand);
+			}
 		}
 		
 		private void AddSprite(Random rand)
 		{
 			Sprite s = new Sprite();
-			s.image = App.images.GetImage("Agrias", new Pivot(0.5f, 0.5f));
+			s.image = App.images.GetImage("Agrias", new PivotF(0.5f, 0.5f));
 			float scale = 0.5f + ( rand.Next(0, 6) * 0.1f );
 			s.scaleX = s.scaleY = scale;
 			s.x = rand.Next(10, 1070);
@@ -75,9 +84,9 @@ namespace PonchoMonogameTest
 			App.Subscribe(updateSprite, true);
 		}
 
-		private void OnMouseEvent()
+		private void OnMouseEvent(Event ev)
 		{
-			MouseEvent e = Event.activeEvent as MouseEvent;
+			MouseEvent e = ev as MouseEvent;
 			if(e == null) return;
 			Console.WriteLine("Event={0}, relatedObject={1}, delta={2}", e.type, e.relatedObject, e.delta);
 		}
