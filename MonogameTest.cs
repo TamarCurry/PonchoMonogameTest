@@ -27,6 +27,9 @@ namespace PonchoMonogameTest
 
 			_agrias.x = 70;
 			_agrias.y = 70;
+			//_agrias.alpha = 0.5f;
+			//_agrias.transforms.colorTransform.red = 0.5f;
+			_ramza.alpha = 0.5f;
 
 			_ramza.x = 20;
 			_ramza.y = 10;
@@ -37,11 +40,15 @@ namespace PonchoMonogameTest
 
 			TextField t = new TextField();
 			t.format = App.GetTextFormat("Tuesday", "Tuesday", 12);
-			t.rotation = 45;
-			t.text = "Tuesday";
-			t.clipOverflow = true;
-			t.width = 50;
+			t.format.color = 0x0000ff;
+			//t.rotation = 45;
+			t.text = "Tuesday is the best day of the week.";
+			//t.clipOverflow = true;
+			t.wordWrap = true;
+			t.multiline = true;
+			t.width = 100;
 			t.height = 50;
+			//t.clipOverflow = true;
 			//t.pivotX = 0.5f;
 			//t.pivotY = 0.5f;
 			_agrias.AddChild(t);
